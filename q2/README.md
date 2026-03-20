@@ -39,17 +39,7 @@ strace -c -f -o trace_syscalls.txt ./copy_syscalls bigfile.bin bigfile_syscalls.
 strace -c -f -o trace_stdio.txt   ./copy_stdio   bigfile.bin bigfile_stdio.bin
 ```
 
-### Results from the current repo run (120MiB)
-
-- `copy_syscalls` elapsed time: `0.288405 s`
-- `copy_stdio` elapsed time:   `0.390243 s`
-
-`strace -c` totals:
-
-- syscalls version: `30761` total syscalls (dominant: `write` then `read`)
-- stdio version:   `404` total syscalls (dominant: buffered `read`/`write` + startup/teardown)
-
-Interpretation to include in your report:
+Interpretation of result:
 
 - The syscall version uses a small user buffer (8 KiB), which increases the number of `read()`/`write()` calls.
 - The stdio version uses a larger buffer (1 MiB), so it typically reduces the number of kernel transitions.

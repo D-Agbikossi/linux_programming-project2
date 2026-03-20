@@ -59,9 +59,7 @@ In the expected system-call sequence you should observe:
    - `close(...)` for pipe ends and the output fd
    - `wait4(...)` (waiting for both children to exit)
 
-### Report wording suggestion
-
-Explain each call in one sentence using its role:
+### Report
 
 - `pipe*`: establishes the byte stream between processes.
 - `fork/clone`: creates the child processes that will later `exec`.

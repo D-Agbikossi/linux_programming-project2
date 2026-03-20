@@ -1,0 +1,23 @@
+# Generated/compiled artifacts
+q1/pipeline
+q1/*.o
+q2/copy_syscalls
+q2/copy_stdio
+q3/primes_mutex
+q4/search
+
+# Generated large files (Q2)
+q2/bigfile*.bin
+
+# Synthetic datasets + benchmark outputs (Q4)
+q4/data/
+q4/output_*.txt
+
+# strace traces + intermediate outputs (Q1/Q2)
+q1/strace_*.txt
+q1/output.txt
+q2/trace_*.txt
+
+# Binary report output (if generated)
+*.pdf
+
